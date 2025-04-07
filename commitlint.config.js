@@ -16,6 +16,6 @@ export default {
         'revert', // 回滚提交
       ],
     ],
-    'subject-case': [0], // 允许任意提交信息大小写
+    'subject-case': [2, 'always', 'sentence-case'], // 首字母大写
   },
 };
