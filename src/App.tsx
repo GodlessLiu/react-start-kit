@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div>Hello world!!</div>
+      <div className="bg-blue-500 text-white p-4">React start kit</div>
     </>
   );
 }
