@@ -1,13 +1,20 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
 import { registerSW } from 'virtual:pwa-register';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
+
+import routes from '~react-pages';
 import './index.css';
 
+function App() {
+  return <Suspense fallback={<p>Loading...</p>}>{useRoutes(routes)}</Suspense>;
+}
 registerSW({ immediate: true });
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>,
 );
