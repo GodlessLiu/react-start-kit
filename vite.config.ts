@@ -22,7 +22,6 @@ export default defineConfig({
         if (pageRegx.test(route.path)) {
           const path = route.path.replace(pageRegx, '');
           route.path = path === 'index' ? '' : path;
-          return route;
         }
         return route;
       },
